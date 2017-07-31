@@ -1,0 +1,85 @@
+* {
+	font-family:  Gill Sans, Verdana, Arial, Helvetica, sans-serif;
+	font-size:  100%;
+	color: hsl(0, 0%, 20%);
+	box-sizing: border-box;
+}
+h1 {
+	font-size:  2.5em;
+}
+h2 {
+	font-size:  1.875em;
+}
+h3 {
+	font-size:  1.625em;
+}
+p {
+	font-size:  1em;
+}
+fieldset {
+	border:none;
+	padding-left: 0pt;
+}
+div.input {
+	margin-top: 3ex;
+}
+label {
+	font-weight: bold;
+}
+p.label {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+}
+p.explanatory {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	color: hsl(0, 0%, 40%);
+}
+p.radioBtn {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+}
+p.columnHeading {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-style: italic;
+	text-decoration: underline;
+}
+.columnBreakBefore {
+	break-before: column;
+}
+.required {
+	color: hsl(0, 50%, 50%);
+}
+.help {
+	display: none;
+	font-size: 90%;
+	color: hsl(0, 0%, 40%);
+}
+input[type=submit] {
+	margin: 25px;
+	padding: 7px;
+	border: 2px solid hsl(0, 0%, 40%);
+	background: hsl(0, 0%, 90%);
+	font-weight: bold;
+}
+input[type=text], input[type=email] {
+	font-size: 1em;
+	width: 25em;
+}
+input:focus+.help, input:invalid+.help {
+	display: inline-block;
+}
+input:required {
+	border: 2px solid hsl(0, 0%, 40%);
+}
+input:optional:not(input[type=submit]) {
+	border: 2px dashed hsl(0, 0%, 30%);
+}
+input:invalid, input:out-of-range {
+	border-color: hsl(0, 50%, 50%);
+	background: hsl(0, 50%, 90%);
+}
+/*input[type=radio]:invalid, input[type=radio]:out-of-range {
+	outline: 1px hsl(0, 50%, 50%) solid !important;
+}*/
