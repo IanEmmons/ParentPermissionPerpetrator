@@ -15,7 +15,7 @@ try
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Coaches and school officials are welcome to contact us with questions."/>
-	<meta name="keywords" content="VASO,Virginia Science Olympiad,Science Olympiad,Virginia,va,science,competition,tournaments,events,regional,state,stem,technology,engineering,mathematics,team,contact,contact us,get in touch"/>
+	<meta name="keywords" content="VASO,Virginia Science Olympiad,Science Olympiad,Virginia,va,science,competition,tournaments"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
 	<title>Parent/Guardian Permissions | Virginia Science Olympiad</title>
@@ -24,12 +24,6 @@ try
 	<link rel="stylesheet" href="p3.css" media="all"/>
 	<?php @include("includes/head.html") ?>
 	<?php @include("includes/google_analytics.html") ?>
-	<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#commentform").validate();
-		});
-	</script>
 </head>
 
 <body>
@@ -88,37 +82,21 @@ $gen->generateTextField('legalLastName', TRUE,
 				If the school that your student attends is not on the list, then the coach
 				probably has not registered the school with VASO yet.</p>
 				<div style="column-count: 2; margin-top: 3ex;">
-					<p class="columnHeading">Elementary, Middle, and Junior High Schools (Division B):</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Belmont Ridge MS" required aria-required="true"> Belmont Ridge MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Eagle Ridge MS" required aria-required="true"> Eagle Ridge MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Longfellow MS" required aria-required="true"> Longfellow MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Luther Jackson MS" required aria-required="true"> Luther Jackson MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Mark Twain MS" required aria-required="true"> Mark Twain MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Middleburg Academy" required aria-required="true"> Middleburg Academy</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Nysmith School" required aria-required="true"> Nysmith School</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Oakcrest School" required aria-required="true"> Oakcrest School</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Providence ES" required aria-required="true"> Providence ES</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Robert Frost MS" required aria-required="true"> Robert Frost MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Rocky Run MS" required aria-required="true"> Rocky Run MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Seneca Ridge MS" required aria-required="true"> Seneca Ridge MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="South County MS" required aria-required="true"> South County MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Trailside MS" required aria-required="true"> Trailside MS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Westminster School" required aria-required="true"> Westminster School</p>
-					<p class="columnHeading columnBreakBefore">High Schools (Division C):</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Centreville HS" required aria-required="true"> Centreville HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Hayfield SS" required aria-required="true"> Hayfield SS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="JEB Stuart HS" required aria-required="true"> JEB Stuart HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="John Champe HS" required aria-required="true"> John Champe HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Lake Braddock HS" required aria-required="true"> Lake Braddock HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Langley HS" required aria-required="true"> Langley HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Robinson SS" required aria-required="true"> Robinson SS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="South County HS" required aria-required="true"> South County HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="South Lakes HS" required aria-required="true"> South Lakes HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Thomas Edison HS" required aria-required="true"> Thomas Edison HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="TJHSST" required aria-required="true"> TJHSST</p>
-					<p class="radioBtn"><input type="radio" name="school" value="West Springfield HS" required aria-required="true"> West Springfield HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Westfield HS" required aria-required="true"> Westfield HS</p>
-					<p class="radioBtn"><input type="radio" name="school" value="Woodberry Forest School" required aria-required="true"> Woodberry Forest School</p>
+<?php
+$schoolList = getSchoolListForStudentEntryForm();
+$columnHeading = '';
+foreach($schoolList as list($schoolId, $schoolName, $nextHeading))
+{
+	if ($columnHeading != $nextHeading)
+	{
+		$columnHeading = $nextHeading;
+		printf('<p class="columnHeading">%1$s</p>' . PHP_EOL, $columnHeading);
+	}
+	printf('<p class="radioBtn"><input type="radio" name="school" value="%1$d" '
+		. 'required aria-required="true"> %2$s</p>' . PHP_EOL,
+		$schoolId, $schoolName);
+}
+?>
 				</div>
 			</div>
 <?php

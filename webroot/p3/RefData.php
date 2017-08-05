@@ -24,3 +24,31 @@ function getRefData(string $tableName): ?array
 		return null;
 	}
 }
+
+function getSchoolListForStudentEntryForm(): ?array
+{
+	$schoolList = [];
+	try
+	{
+		$conn = new DbConnection();
+		$stmt = $conn->prepare('
+select distinct s.id, s.name, d.headingInSchoolList
+from Team tm
+inner join School s on tm.schoolId = s.id
+inner join Division d on tm.divisionId = d.id
+left outer join Tournament tr on tm.tournamentId = tr.id
+where tr.tournamentStatusId is null || tr.tournamentStatusId <> \'frozen\'
+order by d.id, s.name');
+		$result = $stmt->executeAndGetResult();
+		while ($row = $result->fetchRow())
+		{
+			$schoolList[] = array($row["id"], $row["name"], $row["headingInSchoolList"]);
+		}
+		return $schoolList;
+	}
+	catch (Throwable $ex)
+	{
+		echo "<p>DB failure: " . $ex->getMessage() . "</p>";
+		return null;
+	}
+}
