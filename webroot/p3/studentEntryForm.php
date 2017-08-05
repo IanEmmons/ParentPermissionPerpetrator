@@ -74,41 +74,24 @@ $gen->generateTextField('legalLastName', TRUE,
 	'',
 	'Enter student\'s legal last name',
 	'');
-?>
-			<div class="input">
-				<p class="label"><label for="school">Student's School <span class="required">*</span></label></p>
-				<p class="explanatory">It is <i>vital</i> that you record your student's school
-				correctly.  Otherwise your student will not appear on the school roster.
-				If the school that your student attends is not on the list, then the coach
-				probably has not registered the school with VASO yet.</p>
-				<div style="column-count: 2; margin-top: 3ex;">
-<?php
-$schoolList = getSchoolListForStudentEntryForm();
-$columnHeading = '';
-foreach($schoolList as list($schoolId, $schoolName, $nextHeading))
-{
-	if ($columnHeading != $nextHeading)
-	{
-		$columnHeading = $nextHeading;
-		printf('<p class="columnHeading">%1$s</p>' . PHP_EOL, $columnHeading);
-	}
-	printf('<p class="radioBtn"><input type="radio" name="school" value="%1$d" '
-		. 'required aria-required="true"> %2$s</p>' . PHP_EOL,
-		$schoolId, $schoolName);
-}
-?>
-				</div>
-			</div>
-<?php
+$gen->generateSchoolListField('school', TRUE, 2, 'Student\'s School',
+	'It is <i>vital</i> that you record your student\'s school correctly.  Otherwise '
+	. 'your student will not appear on the school roster.  If your student\'s school '
+	. 'is not on the list, then the coach probably has not registered the school with '
+	. 'VASO yet.  If your student\'s school is disabled, then student sign-ups are '
+	. 'not allowed at this time.',
+	'', getSchoolListForStudentEntryForm());
 $gen->generateRadioBtnField('grade', TRUE, 2, 'Student\'s Grade', '', '', range(5, 12));
 $gen->generateRadioBtnField('gender', TRUE, 1, 'Student\'s Gender',
 	'', '', getRefData('GenderIdentity'));
 $gen->generateEmailField('studentEmail', FALSE,
 	'Student\'s Email',
-	'Optional &mdash; we will only use it to send emergency communications regarding tournaments.  It will be discarded after the tournament season.',
+	'Optional &mdash; we will only use it to send emergency communications regarding '
+	. 'tournaments.  It will be discarded after the tournament season.',
 	'', '');
 $gen->generateRadioBtnField('ethnicity', TRUE, 2, 'Student\'s Ethnicity',
-	'Optional, but please consider helping us as we work on educational grants and with various agencies.',
+	'Optional, but please consider helping us as we work on educational grants and '
+	. 'with various agencies.',
 	'', getRefData('Ethnicity'));
 $gen->generateRadioBtnField('numYearsParticipating', TRUE, 2,
 	'How many years has the student been participating in Science Olympiad?',
@@ -127,5 +110,6 @@ $gen->generateRadioBtnField('legalGuardian', TRUE, 1, 'I certify that:',
 }
 catch (Throwable $ex)
 {
-	printf("<p>DB failure: %1$s</p>", $ex->getMessage());
+	printf('<p>Exception at %1$s, line %2$d: %3$s</p>' . PHP_EOL, $ex->getFile(),
+		$ex->getLine(), $ex->getMessage());
 }

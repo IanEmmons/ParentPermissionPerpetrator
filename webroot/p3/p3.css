@@ -45,6 +45,9 @@ p.columnHeading {
 	font-style: italic;
 	text-decoration: underline;
 }
+p.disabled {
+	color: hsl(0, 0%, 67%);
+}
 .columnBreakBefore {
 	break-before: column;
 }

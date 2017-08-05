@@ -46,20 +46,31 @@ class FormFieldGenerator
 		string $label, string $explanation, string $value, array $options): void
 	{
 		$reqAttrs = $this->generateFieldIntro($fieldName, $isRequired, $label, $explanation);
-
-		if ($numColumns > 1)
-		{
-			printf('<div style="column-count: %1$d">' . PHP_EOL, $numColumns);
-		}
+		$this->generateStartColumnDiv($numColumns, FALSE);
 		foreach($options as $id => $name)
 		{
-			printf('<p class="radioBtn"><input type="radio" name="%1$s" value="%2$s"%3$s> %4$s</p>' . PHP_EOL,
-				$fieldName, $id, $reqAttrs, $name);
+			$this->generateRadioBtn($fieldName, (string) $id, $reqAttrs, (string) $name, FALSE);
 		}
-		if ($numColumns > 1)
+		$this->generateEndColumnDiv($numColumns);
+		$this->generateEndDiv();
+	}
+
+	function generateSchoolListField(string $fieldName, bool $isRequired, int $numColumns,
+		string $label, string $explanation, string $value, array $schoolList): void
+	{
+		$reqAttrs = $this->generateFieldIntro($fieldName, $isRequired, $label, $explanation);
+		$this->generateStartColumnDiv($numColumns, TRUE);
+		$columnHeading = '';
+		foreach($schoolList as list($schoolId, $schoolName, $nextHeading, $isDisabled))
 		{
-			$this->generateEndDiv();
+			if ($columnHeading != $nextHeading)
+			{
+				$columnHeading = $nextHeading;
+				printf('<p class="columnHeading">%1$s</p>' . PHP_EOL, $columnHeading);
+			}
+			$this->generateRadioBtn($fieldName, (string) $schoolId, $reqAttrs, $schoolName, $isDisabled);
 		}
+		$this->generateEndColumnDiv($numColumns);
 		$this->generateEndDiv();
 	}
 
@@ -78,6 +89,32 @@ class FormFieldGenerator
 		}
 
 		return $reqAttrs;
+	}
+
+	private function generateRadioBtn(string $fieldName, string $id, string $reqAttrs,
+		string $name, bool $isDisabled): void
+	{
+		$disabled = $isDisabled ? ' disabled' : '';
+		printf('<p class="radioBtn%4$s"><input type="radio" name="%1$s" value="%2$s"%3$s%4$s> %5$s</p>' . PHP_EOL,
+			$fieldName, $id, $reqAttrs, $disabled, $name);
+	}
+
+	private function generateStartColumnDiv(int $numColumns, bool $addTopMargin): void
+	{
+		$margin = $addTopMargin ? 'margin-top: 3ex;' : '';
+
+		if ($numColumns > 1)
+		{
+			printf('<div style="column-count: %1$d; %2$s">' . PHP_EOL, $numColumns, $margin);
+		}
+	}
+
+	private function generateEndColumnDiv(int $numColumns): void
+	{
+		if ($numColumns > 1)
+		{
+			$this->generateEndDiv();
+		}
 	}
 
 	private function generateEndDiv(): void

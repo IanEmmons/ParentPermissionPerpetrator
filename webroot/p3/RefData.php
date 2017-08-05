@@ -7,48 +7,42 @@ require_once('DbResult.php');
 function getRefData(string $tableName): ?array
 {
 	$refData = [];
-	try
+	$conn = new DbConnection();
+	$stmt = $conn->prepare("select distinct id, name from " . $tableName . " order by id");
+	$result = $stmt->executeAndGetResult();
+	while ($row = $result->fetchRow())
 	{
-		$conn = new DbConnection();
-		$stmt = $conn->prepare("select id, name from " . $tableName . " order by id");
-		$result = $stmt->executeAndGetResult();
-		while ($row = $result->fetchRow())
-		{
-			$refData[$row["id"]] = $row["name"];
-		}
-		return $refData;
+		$refData[$row["id"]] = $row["name"];
 	}
-	catch (Throwable $ex)
-	{
-		echo "<p>DB failure: " . $ex->getMessage() . "</p>";
-		return null;
-	}
+	return $refData;
 }
 
 function getSchoolListForStudentEntryForm(): ?array
 {
 	$schoolList = [];
-	try
-	{
-		$conn = new DbConnection();
-		$stmt = $conn->prepare('
-select distinct s.id, s.name, d.headingInSchoolList
+	$conn = new DbConnection();
+	$stmt = $conn->prepare('
+select distinct s.id, s.name, d.headingInSchoolList,
+group_concat(distinct tr.tournamentStatusId separator \'|\') as tournamentStatus
 from Team tm
 inner join School s on tm.schoolId = s.id
 inner join Division d on tm.divisionId = d.id
 left outer join Tournament tr on tm.tournamentId = tr.id
-where tr.tournamentStatusId is null || tr.tournamentStatusId <> \'frozen\'
+group by s.id, s.name, d.headingInSchoolList
 order by d.id, s.name');
-		$result = $stmt->executeAndGetResult();
-		while ($row = $result->fetchRow())
-		{
-			$schoolList[] = array($row["id"], $row["name"], $row["headingInSchoolList"]);
-		}
-		return $schoolList;
-	}
-	catch (Throwable $ex)
+	$result = $stmt->executeAndGetResult();
+	while ($row = $result->fetchRow())
 	{
-		echo "<p>DB failure: " . $ex->getMessage() . "</p>";
-		return null;
+		// If tournament status is null or contains a value that is not 'frozen',
+		// then the school is not disabled:
+		$tournamentStatusList = $row["tournamentStatus"];
+		$isDisabled = FALSE;
+		if ($tournamentStatusList != null && $tournamentStatusList === 'frozen')
+		{
+			$isDisabled = TRUE;
+		}
+		$schoolList[] = array($row["id"], $row["name"], $row["headingInSchoolList"],
+			$isDisabled);
 	}
+	return $schoolList;
 }

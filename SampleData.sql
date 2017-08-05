@@ -1,6 +1,7 @@
 
-insert into Tournament (id, divisionId, name, tournamentStatusId, tournamentTypeId) values (01, 'divB', 'Fairfax', 'frozen', 'regional');
+insert into Tournament (id, divisionId, name, tournamentStatusId, tournamentTypeId) values (01, 'divB', 'Fairfax B', 'frozen', 'regional');
 insert into Tournament (id, divisionId, name, tournamentStatusId, tournamentTypeId) values (02, 'divB', 'State', 'open', 'state');
+insert into Tournament (id, divisionId, name, tournamentStatusId, tournamentTypeId) values (03, 'divC', 'Fairfax C', 'frozen', 'regional');
 
 insert into School (id, name) values (01, 'Belmont Ridge MS');
 insert into Team (id, divisionId, name, schoolId, tournamentId, tournamentTypeId) values (01, 'divB', null, 01, null, 'regional');
@@ -64,6 +65,6 @@ insert into Team (id, divisionId, name, schoolId, tournamentId, tournamentTypeId
 insert into School (id, name) values (29, 'Woodberry Forest School');
 insert into Team (id, divisionId, name, schoolId, tournamentId, tournamentTypeId) values (29, 'divC', null, 29, null, 'regional');
 
-
-
-
+insert into School (id, name) values (30, 'Pinnacle Academy');
+insert into Team (id, divisionId, name, schoolId, tournamentId, tournamentTypeId) values (32, 'divB', 'Jump', 30, null, 'regional');
+insert into Team (id, divisionId, name, schoolId, tournamentId, tournamentTypeId) values (33, 'divC', 'Ugly', 30, null, 'regional');
