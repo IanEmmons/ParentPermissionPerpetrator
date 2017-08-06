@@ -97,8 +97,6 @@ $gen->generateRadioBtnField('numYearsParticipating', TRUE, 2,
 	'How many years has the student been participating in Science Olympiad?',
 	'Include this year, include all divisions.',
 	'', range(1, 10));
-$gen->generateRadioBtnField('legalGuardian', TRUE, 1, 'I certify that:',
-	'', '', getRefData('LegalGuardianStatus'));
 ?>
 			<div><input type="submit" value="Continue »"/></div>
 		</fieldset>
