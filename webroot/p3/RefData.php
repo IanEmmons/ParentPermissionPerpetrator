@@ -4,6 +4,16 @@ require_once('DbConnection.php');
 require_once('DbStatement.php');
 require_once('DbResult.php');
 
+function keyAndValueRange(int $start, int $end, int $step = 1): array
+{
+	$result = [];
+	for ($i = $start; $i <= $end; $i += $step)
+	{
+		$result[$i] = $i;
+	}
+	return $result;
+}
+
 function getRefData(string $tableName): ?array
 {
 	$refData = [];
@@ -36,10 +46,10 @@ order by d.id, s.name');
 		// If tournament status is null or contains a value that is not 'frozen',
 		// then the school is not disabled:
 		$tournamentStatusList = $row["tournamentStatus"];
-		$isDisabled = FALSE;
+		$isDisabled = false;
 		if ($tournamentStatusList != null && $tournamentStatusList === 'frozen')
 		{
-			$isDisabled = TRUE;
+			$isDisabled = true;
 		}
 		$schoolList[] = array($row["id"], $row["name"], $row["headingInSchoolList"],
 			$isDisabled);

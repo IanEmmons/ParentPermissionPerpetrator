@@ -1,10 +1,27 @@
 <?php
 declare(strict_types=1);
-require_once('RefData.php');
-require_once('FormFieldGenerator.php');
+require_once 'RefData.php';
+require_once 'FormFieldGenerator.php';
+require_once 'util.php';
+require_once 'constants.php';
+
+const FIELDS_FROM_PAGE_1 = array('parentName',
+	'parentEmail',
+	'legalFirstName',
+	'nickName',
+	'legalLastName',
+	'school',
+	'grade',
+	'gender',
+	'studentEmail',
+	'ethnicity',
+	'numYearsParticipating');
 
 try
 {
+	//session_start();
+	//restoreForwardedPostFields();
+
 	$gen = new FormFieldGenerator();
 ?>
 
@@ -31,17 +48,20 @@ try
 	<h2>Virginia Science Olympiad (VASO)</h2>
 	<h2>2017-2018 School Year</h2>
 
+<?php dumpPostFields(); ?>
+
 	<p><span class="required">* Response required</span></p>
 
 	<h3>Waivers</h3>
 
-	<form method="post" action="">
+	<form method="post" action="studentEntryFormConfirmation.php">
 		<fieldset>
 			<!-- <legend>Student Entry</legend> -->
 <?php
-$gen->generateRadioBtnField('legalGuardian', TRUE, 1, 'I certify that:',
-	'', '', getRefData('LegalGuardianStatus'));
-$gen->generateRadioBtnField('consentToParticipate', TRUE, 1,
+$gen->generateHiddenFields(FIELDS_FROM_PAGE_1);
+$gen->generateRadioBtnField('legalGuardian', true, 1, 'I certify that:',
+	'', null, getRefData('LegalGuardianStatus'));
+$gen->generateRadioBtnField('consentToParticipate', true, 1,
 	'Parent/Guardian Permission: I understand that participation in Virginia Science '
 	. 'Olympiad (“VASO”) activities involves a certain degree of risk and can be '
 	. 'physically, mentally, and emotionally demanding. I have carefully considered '
@@ -55,8 +75,8 @@ $gen->generateRadioBtnField('consentToParticipate', TRUE, 1,
 	. 'all employees, volunteers, related parties, or other organizations associated '
 	. 'with the activity from any and all claims, liability or cause of action '
 	. 'arising out of this participation.',
-	'', '', array('yes' => 'Yes'));
-$gen->generateRadioBtnField('parentPledge', TRUE, 1,
+	'', null, YES_ONLY_RADIO_BTN_VALUES);
+$gen->generateRadioBtnField('parentPledge', true, 1,
 	'Parent/Guardian Pledge: I pledge to be an example for our children by: respecting '
 	. 'the rules of Science Olympiad, encouraging excellence in preparation and '
 	. 'investigation, supporting independence in design and production of all '
@@ -66,16 +86,16 @@ $gen->generateRadioBtnField('parentPledge', TRUE, 1,
 	. '&mdash; link in the sidebar &mdash; and understand that parents are not '
 	. 'allowed to construct any piece of competition devices. All physical work is '
 	. 'to be done by students on the team.)',
-	'', '', array('yes' => 'Yes'));
-$gen->generateRadioBtnField('studentPledge', TRUE, 1,
+	'', null, YES_ONLY_RADIO_BTN_VALUES);
+$gen->generateRadioBtnField('studentPledge', true, 1,
 	'Student Pledge (to be shared with Competitor): I pledge to put forth my best '
 	. 'effort in the Science Olympiad tournament and to uphold the principles of '
 	. 'honest competition. In my events, I will compete with integrity, respect, and '
 	. 'sportsmanship towards my fellow competitors. I will display courtesy towards '
 	. 'Event Supervisors and Tournament Personnel. My actions will exemplify the '
 	. 'proud spirit of my school, team, and state.',
-	'', '', array('yes' => 'Yes'));
-$gen->generateRadioBtnField('mediaRelease', TRUE, 1,
+	'', null, YES_ONLY_RADIO_BTN_VALUES);
+$gen->generateRadioBtnField('mediaRelease', true, 1,
 	'Media Release: I hereby consent and agree that VASO, and all employees, '
 	. 'volunteers, related parties, or other organizations associated with the '
 	. 'activity have the right to take photographs, videotape, or digital recordings '
@@ -90,9 +110,15 @@ $gen->generateRadioBtnField('mediaRelease', TRUE, 1,
 	'(This release is for pictures of students; VASO will not take pictures of '
 	. 'devices. The release is optional, but encouraged; pictures are typically used '
 	. 'on the Web site and on informational material.  No names are ever used.)',
-	'', array('yes' => 'Yes', 'no' => 'No'));
+	null, YES_NO_RADIO_BTN_VALUES);
 ?>
-			<div><input type="submit" value="« Back"/> <input type="submit" value="Submit"/></div>
+			<p style="font-style: italic; font-weight: bold; color: navy;">By clicking Submit, I certify
+			that blah, blah, yadda, yadda, yadda, ...<br/>(I am telling the truth as best I
+			know it.  Clicking submit constitutes a legally binding signature.  Whatever.)</p>
+			<div>
+				<input type="submit" name="btnBack" value="« Back"/>
+				<input type="submit" name="btnSubmit" value="Submit"/>
+			</div>
 		</fieldset>
 	</form>
 </body>

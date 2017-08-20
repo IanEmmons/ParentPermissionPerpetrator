@@ -1,10 +1,21 @@
 <?php
 declare(strict_types=1);
-require_once('RefData.php');
-require_once('FormFieldGenerator.php');
+require_once 'RefData.php';
+require_once 'FormFieldGenerator.php';
+require_once 'util.php';
+require_once 'constants.php';
+
+const FIELDS_FROM_PAGE_2 = array('legalGuardian',
+	'consentToParticipate',
+	'parentPledge',
+	'studentPledge',
+	'mediaRelease');
 
 try
 {
+	//session_start();
+	//restoreForwardedPostFields();
+
 	$gen = new FormFieldGenerator();
 ?>
 
@@ -43,62 +54,66 @@ try
 		compete on the school team; actual competitors are chosen by the coach of the
 		school team.  Contact your coach with questions.</p>
 
+<?php dumpPostFields(); ?>
+
 	<p><span class="required">* Response required</span></p>
 
-	<form method="post" action="">
+	<form method="post" action="studentEntryForm2.php">
 		<fieldset>
 			<!-- <legend>Student Entry</legend> -->
 <?php
-$gen->generateTextField('parentName', TRUE,
+$gen->generateHiddenFields(FIELDS_FROM_PAGE_2);
+$gen->generateTextField('parentName', true,
 	'Full Name of Person signing up Student',
 	'Unless the student is 18, this person must be the parent/legal guardian of the student.',
 	'Enter full name',
-	'');
-$gen->generateEmailField('parentEmail', TRUE,
+	null);
+$gen->generateEmailField('parentEmail', true,
 	'Email of Person signing up the Student',
 	'',
 	'',
-	'');
-$gen->generateTextField('legalFirstName', TRUE,
+	null);
+$gen->generateTextField('legalFirstName', true,
 	'Student\'s Legal First Name',
 	'You may only sign up one student at a time. Please complete a new signup for each student.',
 	'Enter student\'s legal first name',
-	'');
-$gen->generateTextField('nickName', FALSE,
+	null);
+$gen->generateTextField('nickName', false,
 	'Student\'s Nickname',
 	'Only if different from the student\'s first name.',
 	'Enter student\'s nickname, if applicable',
-	'');
-$gen->generateTextField('legalLastName', TRUE,
+	null);
+$gen->generateTextField('legalLastName', true,
 	'Student\'s Legal Last Name',
 	'',
 	'Enter student\'s legal last name',
-	'');
-$gen->generateSchoolListField('school', TRUE, 2, 'Student\'s School',
+	null);
+$gen->generateSchoolListField('school', true, 2, 'Student\'s School',
 	'It is <i>vital</i> that you record your student\'s school correctly.  Otherwise '
 	. 'your student will not appear on the school roster.  If your student\'s school '
 	. 'is not on the list, then the coach probably has not registered the school with '
 	. 'VASO yet.  If your student\'s school is disabled, then student sign-ups are '
 	. 'not allowed at this time.',
-	'', getSchoolListForStudentEntryForm());
-$gen->generateRadioBtnField('grade', TRUE, 2, 'Student\'s Grade', '', '', range(5, 12));
-$gen->generateRadioBtnField('gender', TRUE, 1, 'Student\'s Gender',
-	'', '', getRefData('GenderIdentity'));
-$gen->generateEmailField('studentEmail', FALSE,
+	null, getSchoolListForStudentEntryForm());
+$gen->generateRadioBtnField('grade', true, 2, 'Student\'s Grade', '', null,
+	STUDENT_GRADE_RADIO_BTN_VALUES);
+$gen->generateRadioBtnField('gender', true, 1, 'Student\'s Gender', '', null,
+	getRefData('GenderIdentity'));
+$gen->generateEmailField('studentEmail', false,
 	'Student\'s Email',
 	'Optional &mdash; we will only use it to send emergency communications regarding '
 	. 'tournaments.  It will be discarded after the tournament season.',
-	'', '');
-$gen->generateRadioBtnField('ethnicity', TRUE, 2, 'Student\'s Ethnicity',
+	'', null);
+$gen->generateRadioBtnField('ethnicity', true, 2, 'Student\'s Ethnicity',
 	'Optional, but please consider helping us as we work on educational grants and '
 	. 'with various agencies.',
-	'', getRefData('Ethnicity'));
-$gen->generateRadioBtnField('numYearsParticipating', TRUE, 2,
+	null, getRefData('Ethnicity'));
+$gen->generateRadioBtnField('numYearsParticipating', true, 2,
 	'How many years has the student been participating in Science Olympiad?',
 	'Include this year, include all divisions.',
-	'', range(1, 10));
+	null, NUM_YEARS_RADIO_BTN_VALUES);
 ?>
-			<div><input type="submit" value="Continue »"/></div>
+			<div><input type="submit" name="btnContinue" value="Continue »"/></div>
 		</fieldset>
 	</form>
 </body>
