@@ -12,101 +12,10 @@
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >204</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >497</cd:y>
+        >496</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >638</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#StudentEntryDisposition"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >165</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >268</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >734</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#GenderIdentity"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >118</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >386</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >7</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#Division"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >59</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >173</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >434</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >380</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#RegionalTeam"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >60</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >197</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >101</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >3</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#Coach"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >185</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >301</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >105</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#RegionalTournament"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >133</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >13</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >726</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#Ethnicity"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >186</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >434</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >689</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#LegalGuardianStatus"/>
+        >718</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#StudentEntryDisposition"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -119,7 +28,7 @@
         >184</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >5</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#School"/>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#School"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -127,25 +36,12 @@
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >36</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >132</cd:width>
+        >165</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >500</cd:y>
+        >242</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >497</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#StateTeam"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >330</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >339</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >9</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >363</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#StudentEntry"/>
+        >731</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#GenderIdentity"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -155,23 +51,129 @@
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >148</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >5</cd:y>
+        >101</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >211</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#Administrator"/>
+        >207</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#Administrator"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >106</cd:height>
+        >36</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >257</cd:width>
+        >173</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >443</cd:y>
+        >344</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#TournamentStatus"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >132</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >416</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >571</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#StateTeam"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >133</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >13</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >726</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#Ethnicity"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >186</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >433</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >736</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#LegalGuardianStatus"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >60</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >197</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >101</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >3</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#Team"/>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#Coach"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:selectedResource rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#StudentEntry"/>
+    <rdfs:label>ScienceOlympiadRosterTracker Diagram</rdfs:label>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >76</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >182</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >5</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#UserAccount"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >76</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >217</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >301</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >709</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#FullName"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >59</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >173</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >483</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >482</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#RegionalTeam"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >185</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >301</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >105</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#RegionalTournament"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -184,7 +186,33 @@
         >262</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >192</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#StateTournament"/>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#StateTournament"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >106</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >257</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >443</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#Team"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >118</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >386</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >7</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#Division"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -194,52 +222,24 @@
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >157</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >342</cd:y>
+        >357</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >311</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#Tournament"/>
+        >387</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#Tournament"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >76</cd:height>
+        >330</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >182</cd:width>
+        >339</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >5</cd:y>
+        >9</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >5</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#UserAccount"/>
+        >363</cd:x>
+        <cd:class rdf:resource="http://virginiaso.org/ScienceOlympiadRosterTracker#StudentEntry"/>
       </cd:URINode>
     </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >76</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >217</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >333</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >707</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#FullName"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:selectedResource rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#StudentEntry"/>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >173</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >344</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:x>
-        <cd:class rdf:resource="http://virginiaso.org/ParentPermissionPerpetrator#TournamentStatus"/>
-      </cd:URINode>
-    </cd:nodes>
-    <rdfs:label>P3 Diagram</rdfs:label>
   </cd:Diagram>
 </rdf:RDF>

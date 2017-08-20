@@ -1,4 +1,4 @@
-drop database ParentPermissionPerpetrator; create database ParentPermissionPerpetrator;
+drop database ParentPermissionPerpetrator; create database ScienceOlympiadRosterTracker;
 
 
 

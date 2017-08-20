@@ -1,778 +1,778 @@
-# baseURI: http://virginiaso.org/ParentPermissionPerpetrator
+# baseURI: http://virginiaso.org/ScienceOlympiadRosterTracker
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix ppp: <http://virginiaso.org/ParentPermissionPerpetrator#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sort: <http://virginiaso.org/ScienceOlympiadRosterTracker#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://virginiaso.org/ParentPermissionPerpetrator>
+<http://virginiaso.org/ScienceOlympiadRosterTracker>
   rdf:type owl:Ontology ;
   owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
 .
-ppp:Administrator
+sort:Administrator
   rdf:type owl:Class ;
   rdfs:label "Administrator"^^xsd:string ;
-  rdfs:subClassOf ppp:UserAccount ;
+  rdfs:subClassOf sort:UserAccount ;
 .
-ppp:Coach
+sort:Coach
   rdf:type owl:Class ;
   rdfs:label "Coach"^^xsd:string ;
-  rdfs:subClassOf ppp:UserAccount ;
+  rdfs:subClassOf sort:UserAccount ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:School ;
-      owl:onProperty ppp:school ;
+      owl:allValuesFrom sort:School ;
+      owl:onProperty sort:school ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:cellPhone ;
+      owl:onProperty sort:cellPhone ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:cellPhone ;
+      owl:onProperty sort:cellPhone ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:school ;
+      owl:onProperty sort:school ;
     ] ;
 .
-ppp:Division
+sort:Division
   rdf:type owl:Class ;
   rdfs:label "Division"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   owl:oneOf (
-      ppp:divisionA
-      ppp:divisionC
-      ppp:divisionB
+      sort:divisionA
+      sort:divisionC
+      sort:divisionB
     ) ;
 .
-ppp:Ethnicity
+sort:Ethnicity
   rdf:type owl:Class ;
   rdfs:label "Ethnicity"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   owl:oneOf (
-      ppp:ethnicityAmericanIndianOrAlaskanNative
-      ppp:ethnicityAsian
-      ppp:ethnicityPacificIslander
-      ppp:ethnicityWhite
-      ppp:ethnicityHispanicOrLatino
-      ppp:ethnicityBlack
-      ppp:ethnicityOther
-      ppp:ethnicityDeclineToParticipate
+      sort:ethnicityAmericanIndianOrAlaskanNative
+      sort:ethnicityAsian
+      sort:ethnicityPacificIslander
+      sort:ethnicityWhite
+      sort:ethnicityHispanicOrLatino
+      sort:ethnicityBlack
+      sort:ethnicityOther
+      sort:ethnicityDeclineToParticipate
     ) ;
 .
-ppp:FullName
+sort:FullName
   rdf:type owl:Class ;
   rdfs:label "Full name"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:legalFirstName ;
+      owl:onProperty sort:legalFirstName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:legalLastName ;
+      owl:onProperty sort:legalLastName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:nickName ;
+      owl:onProperty sort:nickName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:legalFirstName ;
+      owl:onProperty sort:legalFirstName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:legalLastName ;
+      owl:onProperty sort:legalLastName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:nickName ;
+      owl:onProperty sort:nickName ;
     ] ;
 .
-ppp:GenderIdentity
+sort:GenderIdentity
   rdf:type owl:Class ;
   rdfs:label "Gender identity"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   owl:oneOf (
-      ppp:genderIdentityFemale
-      ppp:genderIdentityMale
-      ppp:genderIdentityDeclineToParticipate
+      sort:genderIdentityFemale
+      sort:genderIdentityMale
+      sort:genderIdentityDeclineToParticipate
     ) ;
 .
-ppp:LegalGuardianStatus
+sort:LegalGuardianStatus
   rdf:type owl:Class ;
   rdfs:label "Legal guardian status"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   owl:oneOf (
-      ppp:legalGuardianStatusYes
-      ppp:legalGuardianStatusSelf
-      ppp:legalGuardianStatusNo
+      sort:legalGuardianStatusYes
+      sort:legalGuardianStatusSelf
+      sort:legalGuardianStatusNo
     ) ;
 .
-ppp:RegionalTeam
+sort:RegionalTeam
   rdf:type owl:Class ;
   rdfs:label "Regional team"^^xsd:string ;
-  rdfs:subClassOf ppp:Team ;
+  rdfs:subClassOf sort:Team ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:boolean ;
-      owl:onProperty ppp:isPaid ;
+      owl:onProperty sort:isPaid ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:integer ;
-      owl:onProperty ppp:ordinal ;
+      owl:onProperty sort:ordinal ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:isPaid ;
+      owl:onProperty sort:isPaid ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:ordinal ;
+      owl:onProperty sort:ordinal ;
     ] ;
 .
-ppp:RegionalTournament
+sort:RegionalTournament
   rdf:type owl:Class ;
   rdfs:label "Regional tournament"^^xsd:string ;
-  rdfs:subClassOf ppp:Tournament ;
+  rdfs:subClassOf sort:Tournament ;
 .
-ppp:School
+sort:School
   rdf:type owl:Class ;
   rdfs:label "School"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:boolean ;
-      owl:onProperty ppp:is9thGradeInMiddleSchool ;
+      owl:onProperty sort:is9thGradeInMiddleSchool ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:is9thGradeInMiddleSchool ;
+      owl:onProperty sort:is9thGradeInMiddleSchool ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
 .
-ppp:StateTeam
+sort:StateTeam
   rdf:type owl:Class ;
   rdfs:label "State team"^^xsd:string ;
-  rdfs:subClassOf ppp:Team ;
+  rdfs:subClassOf sort:Team ;
 .
-ppp:StateTournament
+sort:StateTournament
   rdf:type owl:Class ;
   rdfs:label "State tournament"^^xsd:string ;
-  rdfs:subClassOf ppp:Tournament ;
+  rdfs:subClassOf sort:Tournament ;
 .
-ppp:StudentEntry
+sort:StudentEntry
   rdf:type owl:Class ;
   rdfs:label "Student entry"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:Ethnicity ;
-      owl:onProperty ppp:ethnicity ;
+      owl:allValuesFrom sort:Ethnicity ;
+      owl:onProperty sort:ethnicity ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:FullName ;
-      owl:onProperty ppp:fullName ;
+      owl:allValuesFrom sort:FullName ;
+      owl:onProperty sort:fullName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:GenderIdentity ;
-      owl:onProperty ppp:genderIdentity ;
+      owl:allValuesFrom sort:GenderIdentity ;
+      owl:onProperty sort:genderIdentity ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:LegalGuardianStatus ;
-      owl:onProperty ppp:legalGuardianStatus ;
+      owl:allValuesFrom sort:LegalGuardianStatus ;
+      owl:onProperty sort:legalGuardianStatus ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:RegionalTeam ;
-      owl:onProperty ppp:regionalTeam ;
+      owl:allValuesFrom sort:RegionalTeam ;
+      owl:onProperty sort:regionalTeam ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:School ;
-      owl:onProperty ppp:school ;
+      owl:allValuesFrom sort:School ;
+      owl:onProperty sort:school ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:StateTeam ;
-      owl:onProperty ppp:stateTeam ;
+      owl:allValuesFrom sort:StateTeam ;
+      owl:onProperty sort:stateTeam ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:StateTeam ;
-      owl:onProperty ppp:stateTeamAsAlternate ;
+      owl:allValuesFrom sort:StateTeam ;
+      owl:onProperty sort:stateTeamAsAlternate ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:StudentEntryDisposition ;
-      owl:onProperty ppp:disposition ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom xsd:boolean ;
-      owl:onProperty ppp:hasMadeParentPledge ;
+      owl:allValuesFrom sort:StudentEntryDisposition ;
+      owl:onProperty sort:disposition ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:boolean ;
-      owl:onProperty ppp:hasMadeStudentPledge ;
+      owl:onProperty sort:hasMadeParentPledge ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:boolean ;
-      owl:onProperty ppp:hasMediaRelease ;
+      owl:onProperty sort:hasMadeStudentPledge ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:boolean ;
-      owl:onProperty ppp:hasPermissionToParticipate ;
+      owl:onProperty sort:hasMediaRelease ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom xsd:boolean ;
+      owl:onProperty sort:hasPermissionToParticipate ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:dateTime ;
-      owl:onProperty ppp:createTime ;
+      owl:onProperty sort:createTime ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:integer ;
-      owl:onProperty ppp:grade ;
+      owl:onProperty sort:grade ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:integer ;
-      owl:onProperty ppp:numYearsOfSOParticipation ;
+      owl:onProperty sort:numYearsOfSOParticipation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:parentEmail ;
+      owl:onProperty sort:parentEmail ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:parentName ;
+      owl:onProperty sort:parentName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:studentEmail ;
+      owl:onProperty sort:studentEmail ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:createTime ;
+      owl:onProperty sort:createTime ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:ethnicity ;
+      owl:onProperty sort:ethnicity ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:fullName ;
+      owl:onProperty sort:fullName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:genderIdentity ;
+      owl:onProperty sort:genderIdentity ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:grade ;
+      owl:onProperty sort:grade ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:hasMadeParentPledge ;
+      owl:onProperty sort:hasMadeParentPledge ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:hasMadeStudentPledge ;
+      owl:onProperty sort:hasMadeStudentPledge ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:hasMediaRelease ;
+      owl:onProperty sort:hasMediaRelease ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:hasPermissionToParticipate ;
+      owl:onProperty sort:hasPermissionToParticipate ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:legalGuardianStatus ;
+      owl:onProperty sort:legalGuardianStatus ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:numYearsOfSOParticipation ;
+      owl:onProperty sort:numYearsOfSOParticipation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:parentEmail ;
+      owl:onProperty sort:parentEmail ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:parentName ;
+      owl:onProperty sort:parentName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:school ;
+      owl:onProperty sort:school ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:disposition ;
+      owl:onProperty sort:disposition ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:regionalTeam ;
+      owl:onProperty sort:regionalTeam ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:stateTeam ;
+      owl:onProperty sort:stateTeam ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:stateTeamAsAlternate ;
+      owl:onProperty sort:stateTeamAsAlternate ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:studentEmail ;
+      owl:onProperty sort:studentEmail ;
     ] ;
 .
-ppp:StudentEntryDisposition
+sort:StudentEntryDisposition
   rdf:type owl:Class ;
   rdfs:label "Student entry disposition"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   owl:oneOf (
-      ppp:dispositionByCoachNotMySchool
-      ppp:dispositionByCoachDuplicate
-      ppp:dispositionByCoachImproperlyCompleted
+      sort:dispositionByCoachNotMySchool
+      sort:dispositionByCoachDuplicate
+      sort:dispositionByCoachImproperlyCompleted
     ) ;
 .
-ppp:Team
+sort:Team
   rdf:type owl:Class ;
   rdfs:label "Team"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:Division ;
-      owl:onProperty ppp:division ;
+      owl:allValuesFrom sort:Division ;
+      owl:onProperty sort:division ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:School ;
-      owl:onProperty ppp:school ;
+      owl:allValuesFrom sort:School ;
+      owl:onProperty sort:school ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:Tournament ;
-      owl:onProperty ppp:tournament ;
+      owl:allValuesFrom sort:Tournament ;
+      owl:onProperty sort:tournament ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:integer ;
-      owl:onProperty ppp:teamNumber ;
+      owl:onProperty sort:teamNumber ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:division ;
+      owl:onProperty sort:division ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:school ;
+      owl:onProperty sort:school ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:teamNumber ;
+      owl:onProperty sort:teamNumber ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:tournament ;
+      owl:onProperty sort:tournament ;
     ] ;
 .
-ppp:Tournament
+sort:Tournament
   rdf:type owl:Class ;
   rdfs:label "Tournament"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:Division ;
-      owl:onProperty ppp:division ;
+      owl:allValuesFrom sort:Division ;
+      owl:onProperty sort:division ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:allValuesFrom ppp:TournamentStatus ;
-      owl:onProperty ppp:tournamentStatus ;
+      owl:allValuesFrom sort:TournamentStatus ;
+      owl:onProperty sort:tournamentStatus ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:date ;
-      owl:onProperty ppp:date ;
+      owl:onProperty sort:date ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:date ;
+      owl:onProperty sort:date ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:division ;
+      owl:onProperty sort:division ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:tournamentStatus ;
+      owl:onProperty sort:tournamentStatus ;
     ] ;
 .
-ppp:TournamentStatus
+sort:TournamentStatus
   rdf:type owl:Class ;
   rdfs:label "Tournament status"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   owl:oneOf (
-      ppp:tournamentStatusLiquid
-      ppp:tournamentStatusFrozenToCoachesButNotParents
-      ppp:tournamentStatusFrozen
-      ppp:tournamentStatusFrozenToTeamNameChanges
+      sort:tournamentStatusLiquid
+      sort:tournamentStatusFrozenToCoachesButNotParents
+      sort:tournamentStatusFrozen
+      sort:tournamentStatusFrozenToTeamNameChanges
     ) ;
 .
-ppp:UserAccount
+sort:UserAccount
   rdf:type owl:Class ;
   rdfs:label "User account"^^xsd:string ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:password ;
+      owl:onProperty sort:password ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:allValuesFrom xsd:string ;
-      owl:onProperty ppp:userName ;
+      owl:onProperty sort:userName ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:name ;
+      owl:onProperty sort:name ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:password ;
+      owl:onProperty sort:password ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty ppp:userName ;
+      owl:onProperty sort:userName ;
     ] ;
 .
-ppp:cellPhone
+sort:cellPhone
   rdf:type owl:DatatypeProperty ;
   rdfs:label "cell phone, for use at tournaments"^^xsd:string ;
 .
-ppp:createTime
+sort:createTime
   rdf:type owl:DatatypeProperty ;
   rdfs:label "create time"^^xsd:string ;
 .
-ppp:date
+sort:date
   rdf:type owl:DatatypeProperty ;
   rdfs:label "date"^^xsd:string ;
 .
-ppp:disposition
+sort:disposition
   rdf:type owl:ObjectProperty ;
   rdfs:label "student entry disposition"^^xsd:string ;
 .
-ppp:dispositionByAdminDuplicate
-  rdf:type ppp:StudentEntryDisposition ;
+sort:dispositionByAdminDuplicate
+  rdf:type sort:StudentEntryDisposition ;
   rdfs:label "duplicate student entry (verified)"^^xsd:string ;
 .
-ppp:dispositionByAdminImproperlyCompleted
-  rdf:type ppp:StudentEntryDisposition ;
+sort:dispositionByAdminImproperlyCompleted
+  rdf:type sort:StudentEntryDisposition ;
   rdfs:label "improperly completed student entry (verified)"^^xsd:string ;
 .
-ppp:dispositionByCoachDuplicate
-  rdf:type ppp:StudentEntryDisposition ;
+sort:dispositionByCoachDuplicate
+  rdf:type sort:StudentEntryDisposition ;
   rdfs:label "duplicate student entry"^^xsd:string ;
 .
-ppp:dispositionByCoachImproperlyCompleted
-  rdf:type ppp:StudentEntryDisposition ;
+sort:dispositionByCoachImproperlyCompleted
+  rdf:type sort:StudentEntryDisposition ;
   rdfs:label "improperly completed student entry"^^xsd:string ;
 .
-ppp:dispositionByCoachNotMySchool
-  rdf:type ppp:StudentEntryDisposition ;
+sort:dispositionByCoachNotMySchool
+  rdf:type sort:StudentEntryDisposition ;
   rdfs:label "this student entry is not for my school"^^xsd:string ;
 .
-ppp:division
+sort:division
   rdf:type owl:ObjectProperty ;
   rdfs:label "division"^^xsd:string ;
 .
-ppp:divisionA
-  rdf:type ppp:Division ;
+sort:divisionA
+  rdf:type sort:Division ;
   rdfs:label "division a"^^xsd:string ;
 .
-ppp:divisionB
-  rdf:type ppp:Division ;
+sort:divisionB
+  rdf:type sort:Division ;
   rdfs:label "division b"^^xsd:string ;
 .
-ppp:divisionC
-  rdf:type ppp:Division ;
+sort:divisionC
+  rdf:type sort:Division ;
   rdfs:label "division c"^^xsd:string ;
 .
-ppp:ethnicity
+sort:ethnicity
   rdf:type owl:ObjectProperty ;
   rdfs:label "ethnicity"^^xsd:string ;
 .
-ppp:ethnicityAmericanIndianOrAlaskanNative
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityAmericanIndianOrAlaskanNative
+  rdf:type sort:Ethnicity ;
   rdfs:label "American Indian or Alaskan Native"^^xsd:string ;
 .
-ppp:ethnicityAsian
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityAsian
+  rdf:type sort:Ethnicity ;
   rdfs:label "asian"^^xsd:string ;
 .
-ppp:ethnicityBlack
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityBlack
+  rdf:type sort:Ethnicity ;
   rdfs:label "black or African American"^^xsd:string ;
 .
-ppp:ethnicityDeclineToParticipate
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityDeclineToParticipate
+  rdf:type sort:Ethnicity ;
   rdfs:label "decline to participate"^^xsd:string ;
 .
-ppp:ethnicityHispanicOrLatino
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityHispanicOrLatino
+  rdf:type sort:Ethnicity ;
   rdfs:label "Hispanic or Latino"^^xsd:string ;
 .
-ppp:ethnicityOther
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityOther
+  rdf:type sort:Ethnicity ;
   rdfs:label "other"^^xsd:string ;
 .
-ppp:ethnicityPacificIslander
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityPacificIslander
+  rdf:type sort:Ethnicity ;
   rdfs:label "Pacific islander"^^xsd:string ;
 .
-ppp:ethnicityWhite
-  rdf:type ppp:Ethnicity ;
+sort:ethnicityWhite
+  rdf:type sort:Ethnicity ;
   rdfs:label "white"^^xsd:string ;
 .
-ppp:fullName
+sort:fullName
   rdf:type owl:ObjectProperty ;
   rdfs:label "full name"^^xsd:string ;
 .
-ppp:genderIdentity
+sort:genderIdentity
   rdf:type owl:ObjectProperty ;
   rdfs:label "gender identity"^^xsd:string ;
 .
-ppp:genderIdentityDeclineToParticipate
-  rdf:type ppp:GenderIdentity ;
+sort:genderIdentityDeclineToParticipate
+  rdf:type sort:GenderIdentity ;
   rdfs:label "decline to participate"^^xsd:string ;
 .
-ppp:genderIdentityFemale
-  rdf:type ppp:GenderIdentity ;
+sort:genderIdentityFemale
+  rdf:type sort:GenderIdentity ;
   rdfs:label "female"^^xsd:string ;
 .
-ppp:genderIdentityMale
-  rdf:type ppp:GenderIdentity ;
+sort:genderIdentityMale
+  rdf:type sort:GenderIdentity ;
   rdfs:label "male"^^xsd:string ;
 .
-ppp:grade
+sort:grade
   rdf:type owl:DatatypeProperty ;
   rdfs:label "grade"^^xsd:string ;
 .
-ppp:hasMadeParentPledge
+sort:hasMadeParentPledge
   rdf:type owl:DatatypeProperty ;
   rdfs:label "has made parent pledge"^^xsd:string ;
 .
-ppp:hasMadeStudentPledge
+sort:hasMadeStudentPledge
   rdf:type owl:DatatypeProperty ;
   rdfs:label "has made student pledge"^^xsd:string ;
 .
-ppp:hasMediaRelease
+sort:hasMediaRelease
   rdf:type owl:DatatypeProperty ;
   rdfs:label "has media release"^^xsd:string ;
 .
-ppp:hasPermissionToParticipate
+sort:hasPermissionToParticipate
   rdf:type owl:DatatypeProperty ;
   rdfs:label "has permission to participate"^^xsd:string ;
 .
-ppp:is9thGradeInMiddleSchool
+sort:is9thGradeInMiddleSchool
   rdf:type owl:DatatypeProperty ;
   rdfs:label "is ninth grade in middle school"^^xsd:string ;
 .
-ppp:isPaid
+sort:isPaid
   rdf:type owl:DatatypeProperty ;
   rdfs:label "is paid"^^xsd:string ;
 .
-ppp:legalFirstName
+sort:legalFirstName
   rdf:type owl:DatatypeProperty ;
   rdfs:label "legal first name"^^xsd:string ;
 .
-ppp:legalGuardianStatus
+sort:legalGuardianStatus
   rdf:type owl:ObjectProperty ;
   rdfs:label "legal guardian status"^^xsd:string ;
 .
-ppp:legalGuardianStatusNo
-  rdf:type ppp:LegalGuardianStatus ;
+sort:legalGuardianStatusNo
+  rdf:type sort:LegalGuardianStatus ;
   rdfs:label "No, I am not the legal guardian"^^xsd:string ;
 .
-ppp:legalGuardianStatusSelf
-  rdf:type ppp:LegalGuardianStatus ;
+sort:legalGuardianStatusSelf
+  rdf:type sort:LegalGuardianStatus ;
   rdfs:label "I am my own legal guardian (I am at least 18)"^^xsd:string ;
 .
-ppp:legalGuardianStatusYes
-  rdf:type ppp:LegalGuardianStatus ;
+sort:legalGuardianStatusYes
+  rdf:type sort:LegalGuardianStatus ;
   rdfs:label "Yes, I am the legal guardian"^^xsd:string ;
 .
-ppp:legalLastName
+sort:legalLastName
   rdf:type owl:DatatypeProperty ;
   rdfs:label "legal last name"^^xsd:string ;
 .
-ppp:name
+sort:name
   rdf:type owl:DatatypeProperty ;
   rdfs:label "name"^^xsd:string ;
 .
-ppp:nickName
+sort:nickName
   rdf:type owl:DatatypeProperty ;
   rdfs:label "nick name"^^xsd:string ;
 .
-ppp:numYearsOfSOParticipation
+sort:numYearsOfSOParticipation
   rdf:type owl:DatatypeProperty ;
   rdfs:label "num years of SO Participation"^^xsd:string ;
 .
-ppp:ordinal
+sort:ordinal
   rdf:type owl:DatatypeProperty ;
   rdfs:label "ordinal"^^xsd:string ;
 .
-ppp:parentEmail
+sort:parentEmail
   rdf:type owl:DatatypeProperty ;
   rdfs:label "parent email"^^xsd:string ;
 .
-ppp:parentName
+sort:parentName
   rdf:type owl:DatatypeProperty ;
   rdfs:label "parent name"^^xsd:string ;
 .
-ppp:password
+sort:password
   rdf:type owl:DatatypeProperty ;
   rdfs:label "password"^^xsd:string ;
 .
-ppp:regionalTeam
+sort:regionalTeam
   rdf:type owl:ObjectProperty ;
   rdfs:label "regional team"^^xsd:string ;
 .
-ppp:school
+sort:school
   rdf:type owl:ObjectProperty ;
   rdfs:label "school"^^xsd:string ;
 .
-ppp:stateTeam
+sort:stateTeam
   rdf:type owl:ObjectProperty ;
   rdfs:label "state team"^^xsd:string ;
 .
-ppp:stateTeamAsAlternate
+sort:stateTeamAsAlternate
   rdf:type owl:ObjectProperty ;
   rdfs:label "state team as alternate"^^xsd:string ;
 .
-ppp:studentEmail
+sort:studentEmail
   rdf:type owl:DatatypeProperty ;
   rdfs:label "student email"^^xsd:string ;
 .
-ppp:teamNumber
+sort:teamNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:label "team number"^^xsd:string ;
 .
-ppp:tournament
+sort:tournament
   rdf:type owl:ObjectProperty ;
   rdfs:label "tournament"^^xsd:string ;
 .
-ppp:tournamentStatus
+sort:tournamentStatus
   rdf:type owl:ObjectProperty ;
   rdfs:label "tournament status"^^xsd:string ;
 .
-ppp:tournamentStatusFrozen
-  rdf:type ppp:TournamentStatus ;
+sort:tournamentStatusFrozen
+  rdf:type sort:TournamentStatus ;
   rdfs:label "tournament frozen"^^xsd:string ;
 .
-ppp:tournamentStatusFrozenToCoachesButNotParents
-  rdf:type ppp:TournamentStatus ;
+sort:tournamentStatusFrozenToCoachesButNotParents
+  rdf:type sort:TournamentStatus ;
   rdfs:label "tournament frozen to coaches but not parents"^^xsd:string ;
 .
-ppp:tournamentStatusFrozenToTeamNameChanges
-  rdf:type ppp:TournamentStatus ;
+sort:tournamentStatusFrozenToTeamNameChanges
+  rdf:type sort:TournamentStatus ;
   rdfs:label "tournament frozen to team name changes"^^xsd:string ;
 .
-ppp:tournamentStatusLiquid
-  rdf:type ppp:TournamentStatus ;
+sort:tournamentStatusLiquid
+  rdf:type sort:TournamentStatus ;
   rdfs:label "tournament open for team changes"^^xsd:string ;
 .
-ppp:userName
+sort:userName
   rdf:type owl:DatatypeProperty ;
   rdfs:label "user name"^^xsd:string ;
 .

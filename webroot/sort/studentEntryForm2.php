@@ -38,7 +38,7 @@ try
 	<title>Parent/Guardian Permissions | Virginia Science Olympiad</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-	<link rel="stylesheet" href="p3.css" media="all"/>
+	<link rel="stylesheet" href="sort.css" media="all"/>
 	<?php @include("includes/head.html") ?>
 	<?php @include("includes/google_analytics.html") ?>
 </head>

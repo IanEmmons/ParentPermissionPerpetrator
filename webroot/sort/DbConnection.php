@@ -7,7 +7,7 @@ class DbConnection
 	private $serverName = "localhost";
 	private $userName = "root";
 	private $password = "root";
-	private $dbName = "ParentPermissionPerpetrator";
+	private $dbName = "ScienceOlympiadRosterTracker";
 	private $port = 8889;
 	private $conn = null;
 
